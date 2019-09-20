@@ -4,7 +4,7 @@
     border-radius: 50%;
 }
 
-.container {
+.col-sm {
     width: 500px;
     margin: 50px;
     border: 2px solid;
