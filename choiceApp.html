@@ -14,6 +14,9 @@
     <link href="style.css" rel="stylesheet">
     <title>App</title>
 
+    <!-- Vue component styles -->
+    <link href="components/adder/adder.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -35,17 +38,36 @@
             </div>
         </div>
     </nav>
-<h2>Temp Convertor</h2>
-    <div class="container-fluid">
-            <form action="/action_page.php">
-                Farenheit Temp:<br>
-                <input type="text" name="firstname"><br>
-                Kelvin Temp:<br>
-                <input type="text" name="lastname"><br>
-                <input type="submit" value="Calculate">
-            </form>
-        </div>
 
+<h2>Power!</h2>
+    <main class="container-fluid">
+            <div class="row">
+        
+              <article id="adder" class="col-md-4 ">
+    
+                <fieldset class="mt-2">
+                  <label for="guest">Enter your name (2 to 20 characters):</label>
+                  <input id="guest" type="text" minlength="2" maxlength="20">
+                </fieldset>
+        
+                <fieldset class="mt-2">
+                  <label for="num1">Enter first number (1 to 100):</label>
+                  <input id="num1" type="number" min="1" max="100">
+                </fieldset>
+        
+                <fieldset class="mt-2">
+                  <label for="num2">To the power of second number (1 to 100):</label>
+                  <input id="num2" type="number" min="1" max="100">
+                </fieldset>
+        
+                <fieldset class="mt-2">
+                    <hr>
+                    <button onclick="calculate()">Calculate</button>
+                    <hr>
+                    <p id="result"></p>
+
+            </fieldset>
+    </main>
 
 
 
@@ -62,6 +84,38 @@
     <footer>
         @Logan Smith
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+
+    <!-- Vue components -->
+
+    <script src="choiceApp.js"></script>
+
+    <script>
+    /* global localStorage */
+    console.log('SCRIPT START')
+    console.log('Declare testable functions......................')
+    
+    
+    console.log('Declare event listeners .......................')
+    window.addEventListener('load', (event) => {
+      console.log('  Starting initialization ')
+      if (localStorage.getItem('guest')) {
+        document.querySelector('#guest').value = localStorage.getItem('guest')
+        console.log(`  Stored guest = ${localStorage.guest}`)
+      }
+      if (localStorage.getItem('number1')) {
+        document.querySelector('#num1').value = parseInt(localStorage.number1)
+        console.log(`  Stored num1 = ${localStorage.number1}`)
+      }
+      if (localStorage.getItem('number2')) {
+        document.querySelector('#num2').value = parseInt(localStorage.number2)
+        console.log(`  Stored num2 = ${localStorage.number2}`)
+      }
+      console.log('  Finished initialization')
+    })
+    console.log('SCRIPT END')
+    </script>
 
 </body>
 
