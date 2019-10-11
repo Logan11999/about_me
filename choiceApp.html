@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +14,6 @@
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <title>App</title>
-
-    <!-- Vue component styles -->
-    <link href="components/adder/adder.css" rel="stylesheet">
 
 </head>
 
@@ -43,12 +41,7 @@
     <main class="container-fluid">
             <div class="row">
         
-              <article id="adder" class="col-md-4 ">
-    
-                <fieldset class="mt-2">
-                  <label for="guest">Enter your name (2 to 20 characters):</label>
-                  <input id="guest" type="text" minlength="2" maxlength="20">
-                </fieldset>
+              <article class="col-md-4 ">
         
                 <fieldset class="mt-2">
                   <label for="num1">Enter first number (1 to 100):</label>
@@ -63,14 +56,17 @@
                 <fieldset class="mt-2">
                     <hr>
                     <button onclick="calculate()">Calculate</button>
+                    <h2>Result: <p id="result"></p></h2>
                     <hr>
-                    <p id="result"></p>
-
             </fieldset>
+            <div class="col-md-4 mb-4">
+              <h2>Coin Flipper</h2>
+              <hr>
+              <button id="getFlipButton" class="btn btn-success">Flip Coin</button>
+              <hr>
+              <p id="result2"></p>
+            </div>
     </main>
-
-
-
 
     <aside>
         <h2>Find me on: <br></h2>
@@ -85,11 +81,9 @@
         @Logan Smith
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
-
-    <!-- Vue components -->
-
-    <script src="choiceApp.js"></script>
+    <scipt src="scripts/coin.js"></scipt>
+    <script src="scripts/choiceApp.js"></script>
+    
 
     <script>
     /* global localStorage */
