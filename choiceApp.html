@@ -84,7 +84,6 @@
     <scipt src="scripts/coin.js"></scipt>
     <script src="scripts/choiceApp.js"></script>
     
-
     <script>
     /* global localStorage */
     console.log('SCRIPT START')
@@ -94,10 +93,6 @@
     console.log('Declare event listeners .......................')
     window.addEventListener('load', (event) => {
       console.log('  Starting initialization ')
-      if (localStorage.getItem('guest')) {
-        document.querySelector('#guest').value = localStorage.getItem('guest')
-        console.log(`  Stored guest = ${localStorage.guest}`)
-      }
       if (localStorage.getItem('number1')) {
         document.querySelector('#num1').value = parseInt(localStorage.number1)
         console.log(`  Stored num1 = ${localStorage.number1}`)
